@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2018 at 02:26 PM
+-- Generation Time: Oct 13, 2018 at 04:35 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -40,6 +40,32 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`admin_id`, `admin_password`, `admin_name`) VALUES
 ('admin', 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `busy_teacher`
+--
+
+CREATE TABLE `busy_teacher` (
+  `busy_teacher_id` int(11) NOT NULL,
+  `teacher_id` varchar(20) NOT NULL,
+  `busy_teacher_day` int(11) NOT NULL,
+  `busy_teacher_time_start` int(2) NOT NULL,
+  `busy_teacher_time_end` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `busy_teacher`
+--
+
+INSERT INTO `busy_teacher` (`busy_teacher_id`, `teacher_id`, `busy_teacher_day`, `busy_teacher_time_start`, `busy_teacher_time_end`) VALUES
+(1, 'manoch.p', 7, 6, 9),
+(2, 'nuchtiphong.o', 5, 1, 7),
+(3, 'manoch.p', 4, 3, 7),
+(4, 'nachirat.r', 5, 3, 7),
+(5, 'nachirat.r', 3, 4, 5),
+(6, 'itarun.p', 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -144,6 +170,30 @@ INSERT INTO `course_subject` (`course_id`, `subject_id`) VALUES
 (2, '09121045'),
 (2, '04620402'),
 (2, '04622402');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `day`
+--
+
+CREATE TABLE `day` (
+  `day_id` int(11) NOT NULL,
+  `day_name` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `day`
+--
+
+INSERT INTO `day` (`day_id`, `day_name`) VALUES
+(6, 'FRI'),
+(2, 'MON'),
+(7, 'SAT'),
+(1, 'SUN'),
+(5, 'THU'),
+(3, 'TUE'),
+(4, 'WED');
 
 -- --------------------------------------------------------
 
@@ -459,6 +509,36 @@ INSERT INTO `term` (`term_id`, `term_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `time`
+--
+
+CREATE TABLE `time` (
+  `time_id` int(11) NOT NULL,
+  `time_name` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `time`
+--
+
+INSERT INTO `time` (`time_id`, `time_name`) VALUES
+(1, '1'),
+(2, '2'),
+(3, '3'),
+(4, '4'),
+(5, '5'),
+(6, '6'),
+(7, '7'),
+(8, '8'),
+(9, '9'),
+(10, '10'),
+(11, '11'),
+(12, '12'),
+(13, '13');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `year`
 --
 
@@ -499,6 +579,16 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `busy_teacher`
+--
+ALTER TABLE `busy_teacher`
+  ADD PRIMARY KEY (`busy_teacher_id`),
+  ADD KEY `teacher_id` (`teacher_id`),
+  ADD KEY `busy_teacher_time_start` (`busy_teacher_time_start`),
+  ADD KEY `busy_teacher_time_end` (`busy_teacher_time_end`),
+  ADD KEY `busy_teacher_day` (`busy_teacher_day`);
+
+--
 -- Indexes for table `course`
 --
 ALTER TABLE `course`
@@ -517,6 +607,13 @@ ALTER TABLE `course_student_groups`
 ALTER TABLE `course_subject`
   ADD KEY `course_id` (`course_id`),
   ADD KEY `subject_id` (`subject_id`);
+
+--
+-- Indexes for table `day`
+--
+ALTER TABLE `day`
+  ADD PRIMARY KEY (`day_id`),
+  ADD KEY `day_name` (`day_name`);
 
 --
 -- Indexes for table `rm21`
@@ -600,6 +697,12 @@ ALTER TABLE `term`
   ADD PRIMARY KEY (`term_id`);
 
 --
+-- Indexes for table `time`
+--
+ALTER TABLE `time`
+  ADD PRIMARY KEY (`time_id`);
+
+--
 -- Indexes for table `year`
 --
 ALTER TABLE `year`
@@ -610,10 +713,22 @@ ALTER TABLE `year`
 --
 
 --
+-- AUTO_INCREMENT for table `busy_teacher`
+--
+ALTER TABLE `busy_teacher`
+  MODIFY `busy_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
   MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `day`
+--
+ALTER TABLE `day`
+  MODIFY `day_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `student_groups`
@@ -628,6 +743,12 @@ ALTER TABLE `term`
   MODIFY `term_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `time`
+--
+ALTER TABLE `time`
+  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `year`
 --
 ALTER TABLE `year`
@@ -636,6 +757,15 @@ ALTER TABLE `year`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `busy_teacher`
+--
+ALTER TABLE `busy_teacher`
+  ADD CONSTRAINT `busy_teacher_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `busy_teacher_ibfk_3` FOREIGN KEY (`busy_teacher_time_start`) REFERENCES `time` (`time_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `busy_teacher_ibfk_4` FOREIGN KEY (`busy_teacher_time_end`) REFERENCES `time` (`time_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `busy_teacher_ibfk_5` FOREIGN KEY (`busy_teacher_day`) REFERENCES `day` (`day_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `course_student_groups`
