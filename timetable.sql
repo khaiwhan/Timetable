@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2018 at 04:35 PM
+-- Generation Time: Oct 15, 2018 at 10:25 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -48,24 +48,162 @@ INSERT INTO `admin` (`admin_id`, `admin_password`, `admin_name`) VALUES
 --
 
 CREATE TABLE `busy_teacher` (
-  `busy_teacher_id` int(11) NOT NULL,
+  `busy_id` int(11) NOT NULL,
   `teacher_id` varchar(20) NOT NULL,
-  `busy_teacher_day` int(11) NOT NULL,
-  `busy_teacher_time_start` int(2) NOT NULL,
-  `busy_teacher_time_end` int(3) NOT NULL
+  `day_id` int(11) NOT NULL,
+  `time1` varchar(10) DEFAULT NULL,
+  `time2` varchar(10) DEFAULT NULL,
+  `time3` varchar(10) DEFAULT NULL,
+  `time4` varchar(10) DEFAULT NULL,
+  `time5` varchar(10) DEFAULT NULL,
+  `time6` varchar(10) DEFAULT NULL,
+  `time7` varchar(10) DEFAULT NULL,
+  `time8` varchar(10) DEFAULT NULL,
+  `time9` varchar(10) DEFAULT NULL,
+  `time10` varchar(10) DEFAULT NULL,
+  `time11` varchar(10) DEFAULT NULL,
+  `time12` varchar(10) DEFAULT NULL,
+  `time13` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `busy_teacher`
 --
 
-INSERT INTO `busy_teacher` (`busy_teacher_id`, `teacher_id`, `busy_teacher_day`, `busy_teacher_time_start`, `busy_teacher_time_end`) VALUES
-(1, 'manoch.p', 7, 6, 9),
-(2, 'nuchtiphong.o', 5, 1, 7),
-(3, 'manoch.p', 4, 3, 7),
-(4, 'nachirat.r', 5, 3, 7),
-(5, 'nachirat.r', 3, 4, 5),
-(6, 'itarun.p', 1, 1, 3);
+INSERT INTO `busy_teacher` (`busy_id`, `teacher_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
+(1, 'itarun.p', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'itarun.p', 2, 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', '', '', '', '', '', '', ''),
+(3, 'itarun.p', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'itarun.p', 4, '', '', '', '', '', 'Busy', 'Busy', 'Busy', '', '', '', '', ''),
+(5, 'itarun.p', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'itarun.p', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'itarun.p', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'jedsada.a', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 'jedsada.a', 2, 'Busy', 'Busy', 'Busy', '', '', '', '', '', '', '', '', '', ''),
+(10, 'jedsada.a', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 'jedsada.a', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 'jedsada.a', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 'jedsada.a', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 'jedsada.a', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 'kittiwann.n', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(16, 'kittiwann.n', 2, 'Busy', 'Busy', '', '', '', '', '', '', '', '', '', '', ''),
+(17, 'kittiwann.n', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(18, 'kittiwann.n', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(19, 'kittiwann.n', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(20, 'kittiwann.n', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, 'kittiwann.n', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, 'manoch.p', 1, '', '', '', '', '', '', 'Busy', 'Busy', 'Busy', '', '', '', ''),
+(23, 'manoch.p', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, 'manoch.p', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, 'manoch.p', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, 'manoch.p', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, 'manoch.p', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, 'manoch.p', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, 'nachirat.r', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(30, 'nachirat.r', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(31, 'nachirat.r', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(32, 'nachirat.r', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(33, 'nachirat.r', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(34, 'nachirat.r', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(35, 'nachirat.r', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 'nuchtiphong.o', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 'nuchtiphong.o', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, 'nuchtiphong.o', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 'nuchtiphong.o', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 'nuchtiphong.o', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, 'nuchtiphong.o', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, 'nuchtiphong.o', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, 'patrapee.s', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, 'patrapee.s', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, 'patrapee.s', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(46, 'patrapee.s', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, 'patrapee.s', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, 'patrapee.s', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, 'patrapee.s', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, 'pauline.k', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, 'pauline.k', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, 'pauline.k', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, 'pauline.k', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, 'pauline.k', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, 'pauline.k', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(56, 'pauline.k', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(57, 'pitchayapatchaya.s', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(58, 'pitchayapatchaya.s', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(59, 'pitchayapatchaya.s', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(60, 'pitchayapatchaya.s', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, 'pitchayapatchaya.s', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, 'pitchayapatchaya.s', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(63, 'pitchayapatchaya.s', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(64, 'prusayon.n', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(65, 'prusayon.n', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(66, 'prusayon.n', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(67, 'prusayon.n', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(68, 'prusayon.n', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(69, 'prusayon.n', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(70, 'prusayon.n', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(71, 'samatachai.j', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(72, 'samatachai.j', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(73, 'samatachai.j', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(74, 'samatachai.j', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(75, 'samatachai.j', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(76, 'samatachai.j', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(77, 'samatachai.j', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(78, 'sirichai.t', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(79, 'sirichai.t', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(80, 'sirichai.t', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(81, 'sirichai.t', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(82, 'sirichai.t', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(83, 'sirichai.t', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(84, 'sirichai.t', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(85, 'sitti.r', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(86, 'sitti.r', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(87, 'sitti.r', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(88, 'sitti.r', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(89, 'sitti.r', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(90, 'sitti.r', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(91, 'sitti.r', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(92, 'sutinun.p', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(93, 'sutinun.p', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(94, 'sutinun.p', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(95, 'sutinun.p', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(96, 'sutinun.p', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(97, 'sutinun.p', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(98, 'sutinun.p', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(99, 'thanasin.b', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(100, 'thanasin.b', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(101, 'thanasin.b', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(102, 'thanasin.b', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(103, 'thanasin.b', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(104, 'thanasin.b', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(105, 'thanasin.b', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(106, 'wattana.p', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(107, 'wattana.p', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(108, 'wattana.p', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(109, 'wattana.p', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(110, 'wattana.p', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(111, 'wattana.p', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(112, 'wattana.p', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(113, 'weerachai.y', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(114, 'weerachai.y', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(115, 'weerachai.y', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(116, 'weerachai.y', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(117, 'weerachai.y', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(118, 'weerachai.y', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(119, 'weerachai.y', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(120, 'winai.w', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(121, 'winai.w', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(122, 'winai.w', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(123, 'winai.w', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(124, 'winai.w', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(125, 'winai.w', 6, '', '', '', '', '', '', '', 'Busy', '', '', '', '', 'Busy'),
+(126, 'winai.w', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(127, 'deachrut.j', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(128, 'deachrut.j', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(129, 'deachrut.j', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(130, 'deachrut.j', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(131, 'deachrut.j', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(132, 'deachrut.j', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(133, 'deachrut.j', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -215,9 +353,20 @@ CREATE TABLE `rm21` (
 INSERT INTO `rm21` (`subject_id`, `student_groups_id`, `term_id`, `year_id`) VALUES
 ('09111141', 2, 1, 1),
 ('09410141', 2, 1, 1),
-('09111141', 1, 2, 4),
-('09410141', 1, 2, 4),
-('04311201', 1, 2, 4);
+('09410142', 2, 1, 1),
+('04311201', 2, 1, 1),
+('04720201', 2, 1, 1),
+('04620101', 2, 1, 1),
+('04622203', 2, 1, 1),
+('04622101', 2, 1, 1),
+('09111142', 2, 2, 1),
+('09210121', 2, 2, 1),
+('09210122', 2, 2, 1),
+('09410143', 2, 2, 1),
+('09410144', 2, 2, 1),
+('04623201', 2, 2, 1),
+('04622201', 2, 2, 1),
+('04622317', 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -238,7 +387,106 @@ CREATE TABLE `room` (
 INSERT INTO `room` (`room_id`, `room_amount`, `room_type`) VALUES
 ('16103', 40, 'T'),
 ('16104', 25, 'L'),
-('16105', 50, 'T');
+('16201', 40, 'L'),
+('16202', 40, 'L'),
+('16203', 40, 'L'),
+('16301', 40, 'T'),
+('16302', 40, 'T'),
+('16303', 40, 'T'),
+('16304', 40, 'T');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room_7x13`
+--
+
+CREATE TABLE `room_7x13` (
+  `room_id` varchar(6) NOT NULL,
+  `day_id` int(11) NOT NULL,
+  `time1` varchar(10) DEFAULT NULL,
+  `time2` varchar(10) DEFAULT NULL,
+  `time3` varchar(10) DEFAULT NULL,
+  `time4` varchar(10) DEFAULT NULL,
+  `time5` varchar(10) DEFAULT NULL,
+  `time6` varchar(10) DEFAULT NULL,
+  `time7` varchar(10) DEFAULT NULL,
+  `time8` varchar(10) DEFAULT NULL,
+  `time9` varchar(10) DEFAULT NULL,
+  `time10` varchar(10) DEFAULT NULL,
+  `time11` varchar(10) DEFAULT NULL,
+  `time12` varchar(10) DEFAULT NULL,
+  `time13` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `room_7x13`
+--
+
+INSERT INTO `room_7x13` (`room_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
+('16103', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16201', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16201', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16201', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16201', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16201', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16201', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16201', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16202', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16202', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16202', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16202', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16202', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16202', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16202', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16203', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16203', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16203', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16203', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16203', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16203', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16203', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16301', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16301', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16301', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16301', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16301', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16301', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16301', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16302', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16302', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16302', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16302', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16302', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16302', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16302', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16303', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16303', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16303', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16303', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16303', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16303', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16303', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16304', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16304', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16304', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16304', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16304', 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16304', 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16304', 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -353,7 +601,59 @@ INSERT INTO `subject` (`subject_id`, `subject_name`, `subject_unit`, `required_s
 ('09410141', 'Physics for Engineering 1', '3(3-0-6)', ''),
 ('09410142', 'Physic Laboratory for Engineering 1', '1(0-3-1)', ''),
 ('09410143', 'Physics for Engineering 2', '3(3-0-6)', 'Physics for Engineers 1'),
-('09410144', 'Physic Laboratory for Engineering 1', '1(0-3-1)', 'Physics Laboratory for Engineers 1');
+('09410144', 'Physic Laboratory for Engineering 2', '1(0-3-1)', 'Physics Laboratory for Engineers 1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subject_teacher`
+--
+
+CREATE TABLE `subject_teacher` (
+  `subject_teacher_id` int(11) NOT NULL,
+  `subject_id` varchar(10) NOT NULL,
+  `teacher_t` varchar(20) DEFAULT NULL,
+  `teacher_l1` varchar(20) DEFAULT NULL,
+  `teacher_l2` varchar(20) DEFAULT NULL,
+  `teacher_l3` varchar(20) DEFAULT NULL,
+  `teacher_l4` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `subject_teacher`
+--
+
+INSERT INTO `subject_teacher` (`subject_teacher_id`, `subject_id`, `teacher_t`, `teacher_l1`, `teacher_l2`, `teacher_l3`, `teacher_l4`) VALUES
+(12, '04621301', 'jedsada.a', 'jedsada.a', '', '', ''),
+(13, '04621308', 'jedsada.a', 'jedsada.a', '', '', ''),
+(14, '04621308', 'samatachai.j', 'samatachai.j', '', '', ''),
+(15, '04621202', 'nuchtiphong.o', 'nuchtiphong.o', '', '', ''),
+(16, '04622101', 'patrapee.s', 'patrapee.s', '', '', ''),
+(17, '04622402', 'itarun.p', 'itarun.p', '', '', ''),
+(18, '04622402', 'deachrut.j', 'deachrut.j', '', '', ''),
+(19, '04622402', 'sirichai.t', 'sirichai.t', '', '', ''),
+(20, '04621203', 'kittiwann.n', 'kittiwann.n', '', '', ''),
+(21, '04620101', 'sutinun.p', 'sutinun.p', '', '', ''),
+(22, '04620301', 'pauline.k', 'pauline.k', '', '', ''),
+(23, '04620402', 'weerachai.y', 'weerachai.y', '', '', ''),
+(24, '04621308', 'jedsada.a', 'jedsada.a', '', '', ''),
+(25, '04621308', 'samatachai.j', 'samatachai.j', '', '', ''),
+(26, '04623308', 'weerachai.y', 'weerachai.y', '', '', ''),
+(27, '04623301', 'itarun.p', 'itarun.p', '', '', ''),
+(28, '04623301', 'prusayon.n', 'prusayon.n', '', '', ''),
+(29, '04621301', 'jedsada.a', 'jedsada.a', '', '', ''),
+(30, '04622317', 'pitchayapatchaya.s', 'pitchayapatchaya.s', '', '', ''),
+(31, '04623201', 'itarun.p', 'itarun.p', '', '', ''),
+(32, '04623201', 'prusayon.n', 'prusayon.n', '', '', ''),
+(33, '04622201', 'nachirat.r', 'nachirat.r', '', '', ''),
+(34, '04622301', 'patrapee.s', 'patrapee.s', '', '', ''),
+(35, '04621302', 'sutinun.p', 'sutinun.p', '', '', ''),
+(36, '04622311', 'sirichai.t', 'sirichai.t', '', '', ''),
+(37, '04622302', 'sutinun.p', 'sutinun.p', '', '', ''),
+(38, '04622202', 'wattana.p', 'wattana.p', '', '', ''),
+(39, '04622303', 'pauline.k', 'pauline.k', '', '', ''),
+(40, '04623302', 'weerachai.y', 'weerachai.y', '', '', ''),
+(41, '04622203', 'manoch.p', 'manoch.p', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -375,6 +675,8 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`teacher_id`, `teacher_password`, `teacher_name`, `teacher_website`, `teacher_email`, `teacher_phone`) VALUES
+('', '', '', '', '', ''),
+('deachrut.j', '1234', 'Deachrut Jaithavil', 'http://teacher.en.rmutt.ac.th/deachrut.j', 'deachrut.j@en.rmutt.ac.th', '025-493467'),
 ('itarun.p', '1234', 'Itarun Pitimon', '-', 'itarun.p@en.rmutt.ac.th', '025-493466'),
 ('jedsada.a', '1234', 'Jedsada Arunruerk', '-', 'jedsada.a@en.rmutt.ac.th', '025-493467'),
 ('kittiwann.n', '1234', 'Kittiwann Nimkerdphol', 'http://web.en.rmutt.ac.th/ktw/', 'kittiwann.n@en.rmutt.ac.th', '025-493464'),
@@ -397,98 +699,6 @@ INSERT INTO `teacher` (`teacher_id`, `teacher_password`, `teacher_name`, `teache
 -- --------------------------------------------------------
 
 --
--- Table structure for table `teacher_l1`
---
-
-CREATE TABLE `teacher_l1` (
-  `subject_id` varchar(10) NOT NULL,
-  `teacher_l1_id` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `teacher_l1`
---
-
-INSERT INTO `teacher_l1` (`subject_id`, `teacher_l1_id`) VALUES
-('04311201', 'manoch.p'),
-('04000303', 'nachirat.r');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teacher_l2`
---
-
-CREATE TABLE `teacher_l2` (
-  `subject_id` varchar(10) NOT NULL,
-  `teacher_l2_id` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `teacher_l2`
---
-
-INSERT INTO `teacher_l2` (`subject_id`, `teacher_l2_id`) VALUES
-('04311201', 'kittiwann.n');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teacher_l3`
---
-
-CREATE TABLE `teacher_l3` (
-  `subject_id` varchar(10) NOT NULL,
-  `teacher_l3_id` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `teacher_l3`
---
-
-INSERT INTO `teacher_l3` (`subject_id`, `teacher_l3_id`) VALUES
-('04311201', 'kittiwann.n');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teacher_l4`
---
-
-CREATE TABLE `teacher_l4` (
-  `subject_id` varchar(10) NOT NULL,
-  `teacher_l4_id` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `teacher_l4`
---
-
-INSERT INTO `teacher_l4` (`subject_id`, `teacher_l4_id`) VALUES
-('04311201', 'itarun.p');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teacher_t`
---
-
-CREATE TABLE `teacher_t` (
-  `subject_id` varchar(10) NOT NULL,
-  `teacher_t_id` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `teacher_t`
---
-
-INSERT INTO `teacher_t` (`subject_id`, `teacher_t_id`) VALUES
-('04000303', 'manoch.p'),
-('04311201', 'manoch.p');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `term`
 --
 
@@ -505,36 +715,6 @@ INSERT INTO `term` (`term_id`, `term_name`) VALUES
 (1, 1),
 (2, 2),
 (3, 3);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `time`
---
-
-CREATE TABLE `time` (
-  `time_id` int(11) NOT NULL,
-  `time_name` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `time`
---
-
-INSERT INTO `time` (`time_id`, `time_name`) VALUES
-(1, '1'),
-(2, '2'),
-(3, '3'),
-(4, '4'),
-(5, '5'),
-(6, '6'),
-(7, '7'),
-(8, '8'),
-(9, '9'),
-(10, '10'),
-(11, '11'),
-(12, '12'),
-(13, '13');
 
 -- --------------------------------------------------------
 
@@ -582,11 +762,9 @@ ALTER TABLE `admin`
 -- Indexes for table `busy_teacher`
 --
 ALTER TABLE `busy_teacher`
-  ADD PRIMARY KEY (`busy_teacher_id`),
-  ADD KEY `teacher_id` (`teacher_id`),
-  ADD KEY `busy_teacher_time_start` (`busy_teacher_time_start`),
-  ADD KEY `busy_teacher_time_end` (`busy_teacher_time_end`),
-  ADD KEY `busy_teacher_day` (`busy_teacher_day`);
+  ADD PRIMARY KEY (`busy_id`),
+  ADD KEY `day_id` (`day_id`),
+  ADD KEY `teacher_id` (`teacher_id`);
 
 --
 -- Indexes for table `course`
@@ -631,6 +809,13 @@ ALTER TABLE `room`
   ADD PRIMARY KEY (`room_id`);
 
 --
+-- Indexes for table `room_7x13`
+--
+ALTER TABLE `room_7x13`
+  ADD KEY `room_id` (`room_id`),
+  ADD KEY `day_id` (`day_id`);
+
+--
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
@@ -650,57 +835,27 @@ ALTER TABLE `subject`
   ADD PRIMARY KEY (`subject_id`);
 
 --
+-- Indexes for table `subject_teacher`
+--
+ALTER TABLE `subject_teacher`
+  ADD PRIMARY KEY (`subject_teacher_id`),
+  ADD KEY `subject_teacher_ibfk_1` (`subject_id`),
+  ADD KEY `subject_teacher_ibfk_2` (`teacher_l1`),
+  ADD KEY `subject_teacher_ibfk_3` (`teacher_l2`),
+  ADD KEY `subject_teacher_ibfk_4` (`teacher_l3`),
+  ADD KEY `subject_teacher_ibfk_5` (`teacher_l4`);
+
+--
 -- Indexes for table `teacher`
 --
 ALTER TABLE `teacher`
   ADD PRIMARY KEY (`teacher_id`);
 
 --
--- Indexes for table `teacher_l1`
---
-ALTER TABLE `teacher_l1`
-  ADD PRIMARY KEY (`subject_id`),
-  ADD KEY `teacher_l1_id` (`teacher_l1_id`);
-
---
--- Indexes for table `teacher_l2`
---
-ALTER TABLE `teacher_l2`
-  ADD PRIMARY KEY (`subject_id`),
-  ADD KEY `teacher_l2_id` (`teacher_l2_id`);
-
---
--- Indexes for table `teacher_l3`
---
-ALTER TABLE `teacher_l3`
-  ADD PRIMARY KEY (`subject_id`),
-  ADD KEY `teacher_l3_id` (`teacher_l3_id`);
-
---
--- Indexes for table `teacher_l4`
---
-ALTER TABLE `teacher_l4`
-  ADD PRIMARY KEY (`subject_id`),
-  ADD KEY `teacher_l4_id` (`teacher_l4_id`);
-
---
--- Indexes for table `teacher_t`
---
-ALTER TABLE `teacher_t`
-  ADD PRIMARY KEY (`subject_id`),
-  ADD KEY `teacher_t_ibfk_2` (`teacher_t_id`);
-
---
 -- Indexes for table `term`
 --
 ALTER TABLE `term`
   ADD PRIMARY KEY (`term_id`);
-
---
--- Indexes for table `time`
---
-ALTER TABLE `time`
-  ADD PRIMARY KEY (`time_id`);
 
 --
 -- Indexes for table `year`
@@ -716,7 +871,7 @@ ALTER TABLE `year`
 -- AUTO_INCREMENT for table `busy_teacher`
 --
 ALTER TABLE `busy_teacher`
-  MODIFY `busy_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `busy_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- AUTO_INCREMENT for table `course`
@@ -737,16 +892,16 @@ ALTER TABLE `student_groups`
   MODIFY `student_groups_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
+-- AUTO_INCREMENT for table `subject_teacher`
+--
+ALTER TABLE `subject_teacher`
+  MODIFY `subject_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
 -- AUTO_INCREMENT for table `term`
 --
 ALTER TABLE `term`
   MODIFY `term_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `time`
---
-ALTER TABLE `time`
-  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `year`
@@ -762,10 +917,8 @@ ALTER TABLE `year`
 -- Constraints for table `busy_teacher`
 --
 ALTER TABLE `busy_teacher`
-  ADD CONSTRAINT `busy_teacher_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `busy_teacher_ibfk_3` FOREIGN KEY (`busy_teacher_time_start`) REFERENCES `time` (`time_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `busy_teacher_ibfk_4` FOREIGN KEY (`busy_teacher_time_end`) REFERENCES `time` (`time_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `busy_teacher_ibfk_5` FOREIGN KEY (`busy_teacher_day`) REFERENCES `day` (`day_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `busy_teacher_ibfk_1` FOREIGN KEY (`day_id`) REFERENCES `day` (`day_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `busy_teacher_ibfk_2` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `course_student_groups`
@@ -791,45 +944,27 @@ ALTER TABLE `rm21`
   ADD CONSTRAINT `rm21_ibfk_4` FOREIGN KEY (`year_id`) REFERENCES `year` (`year_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `room_7x13`
+--
+ALTER TABLE `room_7x13`
+  ADD CONSTRAINT `room_7x13_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `room_7x13_ibfk_2` FOREIGN KEY (`day_id`) REFERENCES `day` (`day_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `student`
 --
 ALTER TABLE `student`
   ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`student_groups_id`) REFERENCES `student_groups` (`student_groups_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `teacher_l1`
+-- Constraints for table `subject_teacher`
 --
-ALTER TABLE `teacher_l1`
-  ADD CONSTRAINT `teacher_l1_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `teacher_l1_ibfk_2` FOREIGN KEY (`teacher_l1_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `teacher_l2`
---
-ALTER TABLE `teacher_l2`
-  ADD CONSTRAINT `teacher_l2_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `teacher_l2_ibfk_2` FOREIGN KEY (`teacher_l2_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `teacher_l3`
---
-ALTER TABLE `teacher_l3`
-  ADD CONSTRAINT `teacher_l3_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `teacher_l3_ibfk_2` FOREIGN KEY (`teacher_l3_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `teacher_l4`
---
-ALTER TABLE `teacher_l4`
-  ADD CONSTRAINT `teacher_l4_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `teacher_l4_ibfk_2` FOREIGN KEY (`teacher_l4_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `teacher_t`
---
-ALTER TABLE `teacher_t`
-  ADD CONSTRAINT `teacher_t_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `teacher_t_ibfk_2` FOREIGN KEY (`teacher_t_id`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `subject_teacher`
+  ADD CONSTRAINT `subject_teacher_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `subject_teacher_ibfk_2` FOREIGN KEY (`teacher_l1`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `subject_teacher_ibfk_3` FOREIGN KEY (`teacher_l2`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `subject_teacher_ibfk_4` FOREIGN KEY (`teacher_l3`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `subject_teacher_ibfk_5` FOREIGN KEY (`teacher_l4`) REFERENCES `teacher` (`teacher_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
