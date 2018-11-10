@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2018 at 11:02 PM
+-- Generation Time: Nov 10, 2018 at 06:10 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `admin_id` varchar(20) NOT NULL,
-  `admin_password` varchar(20) NOT NULL,
-  `admin_name` varchar(20) NOT NULL
+  `admin_id` varchar(10) NOT NULL,
+  `admin_password` varchar(10) NOT NULL,
+  `admin_name` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -78,15 +78,7 @@ CREATE TABLE `course_student_groups` (
 --
 
 INSERT INTO `course_student_groups` (`course_id`, `student_groups_id`) VALUES
-(2, 1),
-(2, 2),
-(2, 3),
-(2, 4),
-(2, 5),
-(2, 6),
-(2, 7),
-(2, 8),
-(2, 9);
+(3, 36);
 
 -- --------------------------------------------------------
 
@@ -104,46 +96,46 @@ CREATE TABLE `course_subject` (
 --
 
 INSERT INTO `course_subject` (`course_id`, `subject_id`) VALUES
-(2, '09111141'),
-(2, '09410141'),
-(2, '09410142'),
-(2, '04311201'),
-(2, '04720201'),
-(2, '04620101'),
-(2, '04622203'),
-(2, '04622101'),
-(2, '09111142'),
-(2, '09210121'),
-(2, '09210122'),
-(2, '09410143'),
-(2, '09410144'),
-(2, '04623201'),
-(2, '04622201'),
-(2, '04622317'),
-(2, '09111243'),
-(2, '04411102'),
-(2, '04621202'),
-(2, '04621203'),
-(2, '04622301'),
-(2, '04622311'),
-(2, '01320003'),
-(2, '04000301'),
-(2, '04621301'),
-(2, '04622303'),
-(2, '04623301'),
-(2, '04622302'),
-(2, '04000303'),
-(2, '01320006'),
-(2, '04620301'),
-(2, '04621302'),
-(2, '04622202'),
-(2, '04623302'),
-(2, '04621308'),
-(2, '04623308'),
-(2, '04622315'),
-(2, '09121045'),
-(2, '04620402'),
-(2, '04622402');
+(3, '9111141'),
+(3, '9410141'),
+(3, '9410142'),
+(3, '4311201'),
+(3, '4720201'),
+(3, '4620101'),
+(3, '4622203'),
+(3, '4622101'),
+(3, '9111142'),
+(3, '9210121'),
+(3, '9210122'),
+(3, '9410143'),
+(3, '9410144'),
+(3, '4623201'),
+(3, '4622201'),
+(3, '4622317'),
+(3, '9111243'),
+(3, '4411102'),
+(3, '4621202'),
+(3, '4621203'),
+(3, '4622301'),
+(3, '4622311'),
+(3, '1320003'),
+(3, '4000301'),
+(3, '4621301'),
+(3, '4622303'),
+(3, '4623301'),
+(3, '4622302'),
+(3, '4000303'),
+(3, '1320006'),
+(3, '4620301'),
+(3, '4621302'),
+(3, '4622202'),
+(3, '4623302'),
+(3, '4621308'),
+(3, '4623308'),
+(3, '4622315'),
+(3, '9121045'),
+(3, '4620402'),
+(3, '4622402');
 
 -- --------------------------------------------------------
 
@@ -178,19 +170,19 @@ INSERT INTO `day` (`day_id`, `day_name`) VALUES
 CREATE TABLE `display_timetable` (
   `tb_id` int(11) NOT NULL,
   `day_id` int(11) NOT NULL,
-  `time1` varchar(50) DEFAULT NULL,
-  `time2` varchar(50) DEFAULT NULL,
-  `time3` varchar(50) DEFAULT NULL,
-  `time4` varchar(50) DEFAULT NULL,
-  `time5` varchar(50) DEFAULT NULL,
-  `time6` varchar(50) DEFAULT NULL,
-  `time7` varchar(50) DEFAULT NULL,
-  `time8` varchar(50) DEFAULT NULL,
-  `time9` varchar(50) DEFAULT NULL,
-  `time10` varchar(50) DEFAULT NULL,
-  `time11` varchar(50) DEFAULT NULL,
-  `time12` varchar(50) DEFAULT NULL,
-  `time13` varchar(50) DEFAULT NULL
+  `time1` varchar(255) DEFAULT NULL,
+  `time2` varchar(255) DEFAULT NULL,
+  `time3` varchar(255) DEFAULT NULL,
+  `time4` varchar(255) DEFAULT NULL,
+  `time5` varchar(255) DEFAULT NULL,
+  `time6` varchar(255) DEFAULT NULL,
+  `time7` varchar(255) DEFAULT NULL,
+  `time8` varchar(255) DEFAULT NULL,
+  `time9` varchar(255) DEFAULT NULL,
+  `time10` varchar(255) DEFAULT NULL,
+  `time11` varchar(255) DEFAULT NULL,
+  `time12` varchar(255) DEFAULT NULL,
+  `time13` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -198,13 +190,13 @@ CREATE TABLE `display_timetable` (
 --
 
 INSERT INTO `display_timetable` (`tb_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
-(1, 1, 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', '', ''),
-(2, 2, 'Theory of Computation\nmanoch.p\n16105\n58146CPE', 'Theory of Computationmanoch.p1610558146CPE', 'Theory of Computationmanoch.p1610558146CPE', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', '', ''),
-(3, 3, 'Theory of Computation\nmanoch.p\n16103\n58146CPE', 'Theory of Computationmanoch.p1610358146CPE', 'Theory of Computationmanoch.p1610358146CPE', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-(4, 4, 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', '', ''),
-(5, 5, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-(6, 6, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-(7, 7, 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', '', '', '', '', '', '', '');
+(1, 1, '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(2, 2, 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory'),
+(3, 3, '', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', '', '', '', '', '', '', '', '', ''),
+(4, 4, 'Busy', 'Busy', '', '', '', '', '', '', '', '', '', '', ''),
+(5, 5, '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(6, 6, '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 7, '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -224,35 +216,10 @@ CREATE TABLE `rm21` (
 --
 
 INSERT INTO `rm21` (`subject_id`, `student_groups_id`, `term_id`, `year_id`) VALUES
-('09111141', 2, 1, 1),
-('09410141', 2, 1, 1),
-('09410142', 2, 1, 1),
-('04311201', 2, 1, 1),
-('04720201', 2, 1, 1),
-('04620101', 2, 1, 1),
-('04622203', 2, 1, 1),
-('04622101', 2, 1, 1),
-('09111142', 2, 2, 1),
-('09210121', 2, 2, 1),
-('09210122', 2, 2, 1),
-('09410143', 2, 2, 1),
-('09410144', 2, 2, 1),
-('04623201', 2, 2, 1),
-('04622201', 2, 2, 1),
-('04622317', 2, 2, 1),
-('04622402', 1, 3, 1),
-('04620402', 1, 3, 1),
-('09121045', 1, 3, 1),
-('04622315', 1, 3, 1),
-('04623308', 1, 3, 1),
-('04621308', 1, 3, 1),
-('04623302', 1, 3, 1),
-('04622402', 2, 1, 2),
-('04620402', 2, 1, 2),
-('09121045', 2, 1, 2),
-('04622315', 2, 1, 2),
-('04623308', 2, 1, 2),
-('09111141', 1, 1, 1);
+('9410142', 36, 1, 7),
+('4622301', 36, 1, 7),
+('4620101', 36, 1, 7),
+('4622203', 36, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -270,15 +237,8 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`room_id`, `room_amount`) VALUES
-('16103', 40),
-('16105', 40),
-('16202', 40),
-('16203', 40),
-('16204', 40),
-('16206', 40),
-('16303', 40),
-('16304', 40),
-('16305', 40);
+('101', 30),
+('102', 30);
 
 -- --------------------------------------------------------
 
@@ -291,19 +251,19 @@ CREATE TABLE `room_7x13` (
   `year_id` int(11) NOT NULL,
   `term_id` int(11) NOT NULL,
   `day_id` int(11) NOT NULL,
-  `time1` varchar(50) DEFAULT NULL,
-  `time2` varchar(50) DEFAULT NULL,
-  `time3` varchar(50) DEFAULT NULL,
-  `time4` varchar(50) DEFAULT NULL,
-  `time5` varchar(50) DEFAULT NULL,
-  `time6` varchar(50) DEFAULT NULL,
-  `time7` varchar(50) DEFAULT NULL,
-  `time8` varchar(50) DEFAULT NULL,
-  `time9` varchar(50) DEFAULT NULL,
-  `time10` varchar(50) DEFAULT NULL,
-  `time11` varchar(50) DEFAULT NULL,
-  `time12` varchar(50) DEFAULT NULL,
-  `time13` varchar(50) DEFAULT NULL
+  `time1` varchar(255) DEFAULT NULL,
+  `time2` varchar(255) DEFAULT NULL,
+  `time3` varchar(255) DEFAULT NULL,
+  `time4` varchar(255) DEFAULT NULL,
+  `time5` varchar(255) DEFAULT NULL,
+  `time6` varchar(255) DEFAULT NULL,
+  `time7` varchar(255) DEFAULT NULL,
+  `time8` varchar(255) DEFAULT NULL,
+  `time9` varchar(255) DEFAULT NULL,
+  `time10` varchar(255) DEFAULT NULL,
+  `time11` varchar(255) DEFAULT NULL,
+  `time12` varchar(255) DEFAULT NULL,
+  `time13` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -311,69 +271,20 @@ CREATE TABLE `room_7x13` (
 --
 
 INSERT INTO `room_7x13` (`room_id`, `year_id`, `term_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
-('16103', 1, 1, 1, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', ''),
-('16103', 1, 1, 2, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', ''),
-('16103', 1, 1, 3, 'Theory of Computation\nmanoch.p\n16103\n58146CPE', 'Theory of Computationmanoch.p1610358146CPE', 'Theory of Computationmanoch.p1610358146CPE', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('16103', 1, 1, 4, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('16103', 1, 1, 5, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('16103', 1, 1, 6, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('16103', 1, 1, 7, 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', '', '', '', '', '', ''),
-('16105', 1, 1, 1, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', '', '', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', ''),
-('16105', 1, 1, 2, 'Theory of Computation\nmanoch.p\n16105\n58146CPE', 'Theory of Computationmanoch.p1610558146CPE', 'Theory of Computationmanoch.p1610558146CPE', '', '', '', '', '', '', '', '', '', ''),
-('16105', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16105', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16105', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16105', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16105', 1, 1, 7, '', '', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', '', '', ''),
-('16202', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16202', 1, 1, 2, '', '', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', '', '', '', '', '', '', '', ''),
-('16202', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16202', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16202', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16202', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16202', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16203', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16203', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16203', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16203', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16203', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16203', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16203', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16204', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16204', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16204', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16204', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16204', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16204', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16204', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16206', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16206', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16206', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16206', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16206', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16206', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16206', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16303', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16303', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16303', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16303', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16303', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16303', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16303', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16304', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16304', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16304', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16304', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16304', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16304', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16304', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16305', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16305', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16305', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16305', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16305', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16305', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('16305', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+('101', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('101', 7, 1, 2, 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', '', '', '', '', '', '', ''),
+('101', 7, 1, 3, '', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', '', '', '', '', '', '', '', '', ''),
+('101', 7, 1, 4, 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', '', '', '', '', '', '', '', '', '', '', ''),
+('101', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('101', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('101', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('102', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('102', 7, 1, 2, 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', '', '', '', '', '', '', ''),
+('102', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('102', 7, 1, 4, '', '', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', '', '', '', '', '', '', '', ''),
+('102', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('102', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('102', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -387,14 +298,6 @@ CREATE TABLE `student` (
   `student_name` varchar(30) NOT NULL,
   `student_groups_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `student`
---
-
-INSERT INTO `student` (`student_id`, `student_password`, `student_name`, `student_groups_id`) VALUES
-('115830462001-2', '02356', 'Mati', 9),
-('115830462003-7', '1234', 'Phoom Thongsap', 2);
 
 -- --------------------------------------------------------
 
@@ -412,24 +315,7 @@ CREATE TABLE `student_groups` (
 --
 
 INSERT INTO `student_groups` (`student_groups_id`, `student_groups_name`) VALUES
-(1, '58146CPE'),
-(2, '58346CPE'),
-(3, '58446CPE'),
-(4, '59146CPE'),
-(5, '59346CPE'),
-(6, '59446CPE'),
-(7, '60146CPE'),
-(8, '60346CPE'),
-(9, '60446CPE'),
-(19, '61146CPE'),
-(20, '61346CPE'),
-(21, '61446CPE'),
-(22, '62146CPE'),
-(23, '62346CPE'),
-(24, '62446CPE'),
-(25, '63146CPE'),
-(26, '63346CPE'),
-(27, '63446CPE');
+(36, '64346CPE');
 
 -- --------------------------------------------------------
 
@@ -442,19 +328,19 @@ CREATE TABLE `student_groups_7x13` (
   `year_id` int(11) NOT NULL,
   `term_id` int(11) NOT NULL,
   `day_id` int(11) NOT NULL,
-  `time1` varchar(50) DEFAULT NULL,
-  `time2` varchar(50) DEFAULT NULL,
-  `time3` varchar(50) DEFAULT NULL,
-  `time4` varchar(50) DEFAULT NULL,
-  `time5` varchar(50) DEFAULT NULL,
-  `time6` varchar(50) DEFAULT NULL,
-  `time7` varchar(50) DEFAULT NULL,
-  `time8` varchar(50) DEFAULT NULL,
-  `time9` varchar(50) DEFAULT NULL,
-  `time10` varchar(50) DEFAULT NULL,
-  `time11` varchar(50) DEFAULT NULL,
-  `time12` varchar(50) DEFAULT NULL,
-  `time13` varchar(50) DEFAULT NULL
+  `time1` varchar(255) DEFAULT NULL,
+  `time2` varchar(255) DEFAULT NULL,
+  `time3` varchar(255) DEFAULT NULL,
+  `time4` varchar(255) DEFAULT NULL,
+  `time5` varchar(255) DEFAULT NULL,
+  `time6` varchar(255) DEFAULT NULL,
+  `time7` varchar(255) DEFAULT NULL,
+  `time8` varchar(255) DEFAULT NULL,
+  `time9` varchar(255) DEFAULT NULL,
+  `time10` varchar(255) DEFAULT NULL,
+  `time11` varchar(255) DEFAULT NULL,
+  `time12` varchar(255) DEFAULT NULL,
+  `time13` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -462,132 +348,13 @@ CREATE TABLE `student_groups_7x13` (
 --
 
 INSERT INTO `student_groups_7x13` (`student_groups_id`, `year_id`, `term_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
-(1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(1, 1, 1, 2, 'Theory of Computation\nmanoch.p\n16105\n58146CPE', 'Theory of Computationmanoch.p1610558146CPE', 'Theory of Computationmanoch.p1610558146CPE', '', '', '', '', '', '', '', '', '', ''),
-(1, 1, 1, 3, 'Theory of Computation\nmanoch.p\n16103\n58146CPE', 'Theory of Computationmanoch.p1610358146CPE', 'Theory of Computationmanoch.p1610358146CPE', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-(1, 1, 1, 4, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-(1, 1, 1, 5, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-(1, 1, 1, 6, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-(1, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, 1, 1, 1, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', ''),
-(2, 1, 1, 2, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', ''),
-(2, 1, 1, 3, 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', '', '', ''),
-(2, 1, 1, 4, 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', '', '', ''),
-(2, 1, 1, 5, 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', '', '', ''),
-(2, 1, 1, 6, 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', '', '', ''),
-(2, 1, 1, 7, 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', '', '', ''),
-(3, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(36, 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 7, 1, 2, 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', '', '', '', '', '', '', ''),
+(36, 7, 1, 3, '', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', '', '', '', '', '', '', '', '', ''),
+(36, 7, 1, 4, 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', '', '', '', '', '', '', '', ''),
+(36, 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -607,46 +374,46 @@ CREATE TABLE `subject` (
 --
 
 INSERT INTO `subject` (`subject_id`, `subject_name`, `subject_unit`, `required_subject`) VALUES
-('01320003', 'English Conversation', '3(2-2-5)', ''),
-('01320006', 'English for Science and Technology', '3(2-2-5)', ''),
-('04000301', 'Preparation for Professional Experience', '1(0-2-1)', ''),
-('04000303', 'Job Training', '3(0-4-0)', ''),
-('04311201', 'Engineering Mechanics', '3(3-0-6)', ''),
-('04411102', 'Engineering Drawing', '3(2-3-5)', ''),
-('04620101', 'Computer Engineering Laboratory', '2(0-6-0)', ''),
-('04620301', 'Computer Engineering Pre-Project', '1(0-3-1)', ''),
-('04620402', 'Computer Engineering Project', '3(1-6-4)', ''),
-('04621202', 'Adcance Digital System Design', '3(2-3-5)', 'Digital Circuit and Logic Desgin'),
-('04621203', 'Computer Architecture', '3(2-3-5)', ''),
-('04621301', 'Computer Organization and Assembly Language', '3(2-3-5)', ''),
-('04621302', 'Microcontroller and Interfacing', '3(2-3-5)', ''),
-('04621308', 'Computer Hardware Laboratory', '1(0-3-0)', ''),
-('04622101', 'Advanced Computer Programming', '3(2-3-5)', 'Computer Programming'),
-('04622201', 'Data Structure and Algorithm', '3(2-3-5)', 'Computer Programming'),
-('04622202', 'Software Engineering', '3(3-0-6)', ''),
-('04622203', 'Theory of Computation', '3(3-0-6)', ''),
-('04622301', 'Database Systems', '3(2-3-5)', 'Data Structure and Algorithm'),
-('04622302', 'Operating Systems', '3(3-0-6)', 'General Statistics'),
-('04622303', 'System Analysis and Design', '3(2-3-5)', 'Data Structure and Algorithm'),
-('04622311', 'Object Oriented Sofware Engineering', '3(2-2-5)', ''),
-('04622315', 'Mobile Device Programming', '3(2-3-5)', ''),
-('04622317', 'Computer Software Laboratory', '1(0-3-1)', 'Computer Programming'),
-('04622402', 'Advanced Topics in Computer Software', '3(2-3-5)', ''),
-('04623201', 'Data Communication', '3(3-0-6)', ''),
-('04623301', 'Computer Networks', '3(3-0-6)', 'Data Communication'),
-('04623302', 'TCP/IP Network', '3(3-0-6)', 'Computer Networks'),
-('04623308', 'Computer Network Laboratory', '1(0-3-0)', ''),
-('04720201', 'Engineering Materials', '3(3-0-6)', ''),
-('09111141', 'Calculus for Enginerring 1', '3(3-0-6)', ''),
-('09111142', 'Calculus for Enginerring 2', '3(3-0-6)', 'Calculus for Engineers 1'),
-('09111243', 'Calculus for Enginerring 3', '3(3-0-6)', 'Calculus for Enginerring 2'),
-('09121045', 'General Statistics', '3(3-0-6)', ''),
-('09210121', 'Chemistry for Engineering', '3(3-0-6)', ''),
-('09210122', 'Chemistry Laboratory for Engineering', '1(0-3-1)', ''),
-('09410141', 'Physics for Engineering 1', '3(3-0-6)', ''),
-('09410142', 'Physic Laboratory for Engineering 1', '1(0-3-1)', ''),
-('09410143', 'Physics for Engineering 2', '3(3-0-6)', 'Physics for Engineers 1'),
-('09410144', 'Physic Laboratory for Engineering 2', '1(0-3-1)', 'Physics Laboratory for Engineers 1');
+('1320003', 'English Conversation', '3(2-2-5)', ''),
+('1320006', 'English for Science and Technology', '3(2-2-5)', ''),
+('4000301', 'Preparation for Professional Experience', '1(0-2-1)', ''),
+('4000303', 'Job Training', '3(0-40-0)', ''),
+('4311201', 'Engineering Mechanics', '3(3-0-6)', ''),
+('4411102', 'Engineering Drawing', '3(2-3-5)', ''),
+('4620101', 'Computer Engineering Laboratory', '2(0-6-0)', ''),
+('4620301', 'Computer Engineering Pre-Project', '1(0-3-1)', ''),
+('4620402', 'Computer Engineering Project', '3(1-6-4)', ''),
+('4621202', 'Adcance Digital System Design', '3(2-3-5)', 'Digital Circuit and Logic Desgin'),
+('4621203', 'Computer Architecture', '3(2-3-5)', ''),
+('4621301', 'Computer Organization and Assembly Language', '3(2-3-5)', ''),
+('4621302', 'Microcontroller and Interfacing', '3(2-3-5)', ''),
+('4621308', 'Computer Hardware Laboratory', '1(0-3-0)', ''),
+('4622101', 'Advanced Computer Programming', '3(2-3-5)', 'Computer Programming'),
+('4622201', 'Data Structure and Algorithm', '3(2-3-5)', 'Computer Programming'),
+('4622202', 'Software Engineering', '3(3-0-6)', ''),
+('4622203', 'Theory of Computation', '3(3-0-6)', ''),
+('4622301', 'Database Systems', '3(2-3-5)', 'Data Structure and Algorithm'),
+('4622302', 'Operating Systems', '3(3-0-6)', 'General Statistics'),
+('4622303', 'System Analysis and Design', '3(2-3-5)', 'Data Structure and Algorithm'),
+('4622311', 'Object Oriented Sofware Engineering', '3(2-2-5)', ''),
+('4622315', 'Mobile Device Programming', '3(2-3-5)', ''),
+('4622317', 'Computer Software Laboratory', '1(0-3-1)', 'Computer Programming'),
+('4622402', 'Advanced Topics in Computer Software', '3(2-3-5)', ''),
+('4623201', 'Data Communication', '3(3-0-6)', ''),
+('4623301', 'Computer Networks', '3(3-0-6)', 'Data Communication'),
+('4623302', 'TCP/IP Network', '3(3-0-6)', 'Computer Networks'),
+('4623308', 'Computer Network Laboratory', '1(0-3-0)', ''),
+('4720201', 'Engineering Materials', '3(3-0-6)', ''),
+('9111141', 'Calculus for Enginerring 1', '3(3-0-6)', ''),
+('9111142', 'Calculus for Enginerring 2', '3(3-0-6)', 'Calculus for Engineers 1'),
+('9111243', 'Calculus for Enginerring 3', '3(3-0-6)', 'Calculus for Enginerring 2'),
+('9121045', 'General Statistics', '3(3-0-6)', ''),
+('9210121', 'Chemistry for Engineering', '3(3-0-6)', ''),
+('9210122', 'Chemistry Laboratory for Engineering', '1(0-3-1)', ''),
+('9410141', 'Physics for Engineering 1', '3(3-0-6)', ''),
+('9410142', 'Physic Laboratory for Engineering 1', '1(0-3-1)', ''),
+('9410143', 'Physics for Engineering 2', '3(3-0-6)', 'Physics for Engineers 1'),
+('9410144', 'Physic Laboratory for Engineering 1', '1(0-3-1)', 'Physics Laboratory for Engineers 1');
 
 -- --------------------------------------------------------
 
@@ -669,36 +436,10 @@ CREATE TABLE `subject_teacher` (
 --
 
 INSERT INTO `subject_teacher` (`subject_teacher_id`, `subject_id`, `teacher_t`, `teacher_l1`, `teacher_l2`, `teacher_l3`, `teacher_l4`) VALUES
-(12, '04621301', 'jedsada.a', 'jedsada.a', '', '', ''),
-(13, '04621308', 'jedsada.a', 'jedsada.a', '', '', ''),
-(14, '04621308', 'samatachai.j', 'samatachai.j', '', '', ''),
-(15, '04621202', 'nuchtiphong.o', 'nuchtiphong.o', '', '', ''),
-(17, '04622402', 'itarun.p', 'itarun.p', '', '', ''),
-(18, '04622402', 'deachrut.j', 'deachrut.j', '', '', ''),
-(19, '04622402', 'sirichai.t', 'sirichai.t', '', '', ''),
-(20, '04621203', 'kittiwann.n', 'kittiwann.n', '', '', ''),
-(21, '04620101', 'sutinun.p', 'sutinun.p', '', '', ''),
-(22, '04620301', 'pauline.k', 'pauline.k', '', '', ''),
-(23, '04620402', 'weerachai.y', 'weerachai.y', '', '', ''),
-(24, '04621308', 'jedsada.a', 'jedsada.a', '', '', ''),
-(25, '04621308', 'samatachai.j', 'samatachai.j', '', '', ''),
-(26, '04623308', 'weerachai.y', 'weerachai.y', '', '', ''),
-(27, '04623301', 'itarun.p', 'itarun.p', '', '', ''),
-(28, '04623301', 'prusayon.n', 'prusayon.n', '', '', ''),
-(29, '04621301', 'jedsada.a', 'jedsada.a', '', '', ''),
-(30, '04622317', 'pitchayapatchaya.s', 'pitchayapatchaya.s', '', '', ''),
-(31, '04623201', 'itarun.p', 'itarun.p', '', '', ''),
-(32, '04623201', 'prusayon.n', 'prusayon.n', '', '', ''),
-(33, '04622201', 'nachirat.r', 'nachirat.r', '', '', ''),
-(34, '04622301', 'patrapee.s', 'patrapee.s', '', '', ''),
-(35, '04621302', 'sutinun.p', 'sutinun.p', '', '', ''),
-(36, '04622311', 'sirichai.t', 'sirichai.t', '', '', ''),
-(37, '04622302', 'sutinun.p', 'sutinun.p', '', '', ''),
-(38, '04622202', 'wattana.p', 'wattana.p', '', '', ''),
-(39, '04622303', 'pauline.k', 'pauline.k', '', '', ''),
-(40, '04623302', 'weerachai.y', 'weerachai.y', '', '', ''),
-(41, '04622203', 'manoch.p', 'manoch.p', '', '', ''),
-(42, '04622101', 'patrapee.s', 'patrapee.s', '', '', '');
+(45, '4622301', 'patrapee.s', 'patrapee.s', '', '', ''),
+(46, '4622311', 'itarun.p', 'itarun.p', '', '', ''),
+(47, '4620101', 'sutinun.p', 'sutinun.p', '', '', ''),
+(48, '4622203', 'manoch.p', 'manoch.p', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -736,7 +477,6 @@ INSERT INTO `teacher` (`teacher_id`, `teacher_password`, `teacher_name`, `teache
 ('sirichai.t', '1234', 'Sirichai Triamlumlerd', '-', 'sirichai.t@en.rmutt.ac.th', '025-493464'),
 ('sitti.r', '1234', 'Sitti Rugtanom', 'http://www.facebook.com/#!/sitti.rugtanom', 'sitti.r@en.rmutt.ac.th', '025-493467'),
 ('sutinun.p', '1234', 'Sutinun Pronanuluck', '-', 'sutinun.p@en.rmutt.ac.th', '025-493464'),
-('thanasin.b', '1234', 'Thanasin  Bunnam', '-', 'thanasin.b@en.rmutt.ac.th', '025-493467'),
 ('wattana.p', '1234', 'Wattana Punlumjeak', '-', 'wattana.p@en.rmutt.ac.th', '025-493464'),
 ('weerachai.y', '1234', 'Weerachai Yaemvachi', 'http://www.en.rmutt.ac.th/weerachai.y', 'weerachai.y@en.rmutt.ac.th', '025-493466'),
 ('winai.w', '1234', 'Winai Wichaipanitch', '-', 'winai.w@en.rmutt.ac.th', '025-493465');
@@ -752,19 +492,19 @@ CREATE TABLE `teacher_7x13` (
   `year_id` int(11) NOT NULL,
   `term_id` int(11) NOT NULL,
   `day_id` int(11) NOT NULL,
-  `time1` varchar(50) DEFAULT NULL,
-  `time2` varchar(50) DEFAULT NULL,
-  `time3` varchar(50) DEFAULT NULL,
-  `time4` varchar(50) DEFAULT NULL,
-  `time5` varchar(50) DEFAULT NULL,
-  `time6` varchar(50) DEFAULT NULL,
-  `time7` varchar(50) DEFAULT NULL,
-  `time8` varchar(50) DEFAULT NULL,
-  `time9` varchar(50) DEFAULT NULL,
-  `time10` varchar(50) DEFAULT NULL,
-  `time11` varchar(50) DEFAULT NULL,
-  `time12` varchar(50) DEFAULT NULL,
-  `time13` varchar(50) DEFAULT NULL
+  `time1` varchar(255) DEFAULT NULL,
+  `time2` varchar(255) DEFAULT NULL,
+  `time3` varchar(255) DEFAULT NULL,
+  `time4` varchar(255) DEFAULT NULL,
+  `time5` varchar(255) DEFAULT NULL,
+  `time6` varchar(255) DEFAULT NULL,
+  `time7` varchar(255) DEFAULT NULL,
+  `time8` varchar(255) DEFAULT NULL,
+  `time9` varchar(255) DEFAULT NULL,
+  `time10` varchar(255) DEFAULT NULL,
+  `time11` varchar(255) DEFAULT NULL,
+  `time12` varchar(255) DEFAULT NULL,
+  `time13` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -772,139 +512,34 @@ CREATE TABLE `teacher_7x13` (
 --
 
 INSERT INTO `teacher_7x13` (`teacher_id`, `year_id`, `term_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
-('deachrut.j', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('deachrut.j', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('deachrut.j', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('deachrut.j', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('deachrut.j', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('deachrut.j', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('deachrut.j', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 1, 1, 1, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', '', '', '', '', '', '', '', ''),
-('itarun.p', 1, 1, 2, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', '', '', '', '', '', '', '', ''),
-('itarun.p', 1, 1, 3, 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy'),
-('itarun.p', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('patrapee.s', 1, 1, 1, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', ''),
-('patrapee.s', 1, 1, 2, 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Topics in Computer Software', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', ''),
-('patrapee.s', 1, 1, 3, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('patrapee.s', 1, 1, 4, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('patrapee.s', 1, 1, 5, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('patrapee.s', 1, 1, 6, '', '', '', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('patrapee.s', 1, 1, 7, 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', 'Advanced Computer Programming', '', '', '', '', '', '', '', ''),
-('sirichai.t', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sirichai.t', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sirichai.t', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sirichai.t', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sirichai.t', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sirichai.t', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sirichai.t', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('jedsada.a', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('jedsada.a', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('jedsada.a', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('jedsada.a', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('jedsada.a', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('jedsada.a', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('jedsada.a', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('kittiwann.n', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('kittiwann.n', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('kittiwann.n', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('kittiwann.n', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('kittiwann.n', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('kittiwann.n', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('kittiwann.n', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('manoch.p', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('manoch.p', 1, 1, 2, 'Theory of Computation\nmanoch.p\n16105\n58146CPE', 'Theory of Computationmanoch.p1610558146CPE', 'Theory of Computationmanoch.p1610558146CPE', '', '', '', '', '', '', '', '', '', ''),
-('manoch.p', 1, 1, 3, 'Theory of Computation\nmanoch.p\n16103\n58146CPE', 'Theory of Computationmanoch.p1610358146CPE', 'Theory of Computationmanoch.p1610358146CPE', '', '', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', 'Advanced Computer Programmingpatrapee.s1610358146C', '', '', ''),
-('manoch.p', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('manoch.p', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('manoch.p', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('manoch.p', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nachirat.r', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nachirat.r', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nachirat.r', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nachirat.r', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nachirat.r', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nachirat.r', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nachirat.r', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nuchtiphong.o', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nuchtiphong.o', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nuchtiphong.o', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nuchtiphong.o', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nuchtiphong.o', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nuchtiphong.o', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('nuchtiphong.o', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pauline.k', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pauline.k', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pauline.k', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pauline.k', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pauline.k', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pauline.k', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pauline.k', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pitchayapatchaya.s', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pitchayapatchaya.s', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pitchayapatchaya.s', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pitchayapatchaya.s', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pitchayapatchaya.s', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pitchayapatchaya.s', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('pitchayapatchaya.s', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('prusayon.n', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('prusayon.n', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('prusayon.n', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('prusayon.n', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('prusayon.n', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('prusayon.n', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('prusayon.n', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('samatachai.j', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('samatachai.j', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('samatachai.j', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('samatachai.j', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('samatachai.j', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('samatachai.j', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('samatachai.j', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sitti.r', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sitti.r', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sitti.r', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sitti.r', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sitti.r', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sitti.r', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sitti.r', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('thanasin.b', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('thanasin.b', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('thanasin.b', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('thanasin.b', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('thanasin.b', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('thanasin.b', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('thanasin.b', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('wattana.p', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('wattana.p', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('wattana.p', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('wattana.p', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('wattana.p', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('wattana.p', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('wattana.p', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('weerachai.y', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('weerachai.y', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('weerachai.y', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('weerachai.y', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('weerachai.y', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('weerachai.y', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('weerachai.y', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('winai.w', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('winai.w', 1, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('winai.w', 1, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('winai.w', 1, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('winai.w', 1, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('winai.w', 1, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('winai.w', 1, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+('patrapee.s', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('patrapee.s', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('patrapee.s', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('patrapee.s', 7, 1, 4, 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', '', '', '', '', '', '', '', ''),
+('patrapee.s', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('patrapee.s', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('patrapee.s', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('itarun.p', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('itarun.p', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('itarun.p', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('itarun.p', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('itarun.p', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('itarun.p', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('itarun.p', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 2, 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', '', '', '', '', '', '', ''),
+('sutinun.p', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('manoch.p', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('manoch.p', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('manoch.p', 7, 1, 3, '', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', '', '', '', '', '', '', '', '', ''),
+('manoch.p', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('manoch.p', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('manoch.p', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('manoch.p', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -925,6 +560,42 @@ INSERT INTO `term` (`term_id`, `term_name`) VALUES
 (1, 1),
 (2, 2),
 (3, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `view_timetable`
+--
+
+CREATE TABLE `view_timetable` (
+  `tb_id` int(11) NOT NULL,
+  `subject_id` varchar(10) NOT NULL,
+  `student_groups_id` int(11) NOT NULL,
+  `room_t` varchar(6) NOT NULL,
+  `room_l` varchar(6) NOT NULL,
+  `time_t` varchar(10) NOT NULL,
+  `time_l` varchar(10) NOT NULL,
+  `teacher_t` varchar(20) NOT NULL,
+  `teacher_l` varchar(20) NOT NULL,
+  `term_id` int(11) NOT NULL,
+  `year_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `view_timetable`
+--
+
+INSERT INTO `view_timetable` (`tb_id`, `subject_id`, `student_groups_id`, `room_t`, `room_l`, `time_t`, `time_l`, `teacher_t`, `teacher_l`, `term_id`, `year_id`) VALUES
+(70, '9111141', 36, '', '', 'MON 1-3', '', '', '', 1, 7),
+(71, '9410141', 36, '', '', 'WED 1-3', '', '', '', 1, 7),
+(72, '9410142', 36, '', '', '', '', '', '', 1, 7),
+(73, '4311201', 36, '', '', '', '', '', '', 1, 7),
+(74, '4720201', 36, '', '', '', '', '', '', 1, 7),
+(75, '4620101', 36, '', '', '', '', '', '', 1, 7),
+(76, '4622301', 36, '101', '102', 'WED 1-2', 'WED 3-5', 'patrapee.s', 'patrapee.s', 1, 7),
+(77, '4622311', 36, '101', '102', 'FRI 1-2', 'FRI 3-4', 'itarun.p', 'itarun.p', 1, 7),
+(78, '4620101', 36, '', '', '', '', '', '', 1, 7),
+(79, '4622203', 36, '101', '', 'TUE 2-4', '', 'manoch.p', 'manoch.p', 1, 7);
 
 -- --------------------------------------------------------
 
@@ -1087,6 +758,20 @@ ALTER TABLE `term`
   ADD PRIMARY KEY (`term_id`);
 
 --
+-- Indexes for table `view_timetable`
+--
+ALTER TABLE `view_timetable`
+  ADD PRIMARY KEY (`tb_id`),
+  ADD KEY `room_l` (`room_l`),
+  ADD KEY `room_t` (`room_t`),
+  ADD KEY `student_groups_id` (`student_groups_id`),
+  ADD KEY `subject_id` (`subject_id`),
+  ADD KEY `teacher_l` (`teacher_l`),
+  ADD KEY `teacher_t` (`teacher_t`),
+  ADD KEY `term` (`term_id`),
+  ADD KEY `year` (`year_id`);
+
+--
 -- Indexes for table `year`
 --
 ALTER TABLE `year`
@@ -1112,19 +797,25 @@ ALTER TABLE `day`
 -- AUTO_INCREMENT for table `student_groups`
 --
 ALTER TABLE `student_groups`
-  MODIFY `student_groups_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `student_groups_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `subject_teacher`
 --
 ALTER TABLE `subject_teacher`
-  MODIFY `subject_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `subject_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `term`
 --
 ALTER TABLE `term`
   MODIFY `term_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `view_timetable`
+--
+ALTER TABLE `view_timetable`
+  MODIFY `tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `year`
