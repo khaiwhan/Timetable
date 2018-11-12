@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2018 at 06:10 PM
+-- Generation Time: Nov 12, 2018 at 06:02 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -44,6 +44,28 @@ INSERT INTO `admin` (`admin_id`, `admin_password`, `admin_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `check_dd_timetable`
+--
+
+CREATE TABLE `check_dd_timetable` (
+  `subject_id` varchar(10) NOT NULL,
+  `student_groups_id` int(11) NOT NULL,
+  `term_id` int(11) NOT NULL,
+  `year_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `check_dd_timetable`
+--
+
+INSERT INTO `check_dd_timetable` (`subject_id`, `student_groups_id`, `term_id`, `year_id`) VALUES
+('04620101', 37, 1, 7),
+('04622203', 37, 1, 7),
+('09111141', 37, 1, 7);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `course`
 --
 
@@ -78,7 +100,10 @@ CREATE TABLE `course_student_groups` (
 --
 
 INSERT INTO `course_student_groups` (`course_id`, `student_groups_id`) VALUES
-(3, 36);
+(3, 36),
+(3, 37),
+(2, 38),
+(2, 39);
 
 -- --------------------------------------------------------
 
@@ -96,46 +121,46 @@ CREATE TABLE `course_subject` (
 --
 
 INSERT INTO `course_subject` (`course_id`, `subject_id`) VALUES
-(3, '9111141'),
-(3, '9410141'),
-(3, '9410142'),
-(3, '4311201'),
-(3, '4720201'),
-(3, '4620101'),
-(3, '4622203'),
-(3, '4622101'),
-(3, '9111142'),
-(3, '9210121'),
-(3, '9210122'),
-(3, '9410143'),
-(3, '9410144'),
-(3, '4623201'),
-(3, '4622201'),
-(3, '4622317'),
-(3, '9111243'),
-(3, '4411102'),
-(3, '4621202'),
-(3, '4621203'),
-(3, '4622301'),
-(3, '4622311'),
-(3, '1320003'),
-(3, '4000301'),
-(3, '4621301'),
-(3, '4622303'),
-(3, '4623301'),
-(3, '4622302'),
-(3, '4000303'),
-(3, '1320006'),
-(3, '4620301'),
-(3, '4621302'),
-(3, '4622202'),
-(3, '4623302'),
-(3, '4621308'),
-(3, '4623308'),
-(3, '4622315'),
-(3, '9121045'),
-(3, '4620402'),
-(3, '4622402');
+(3, '09111141'),
+(3, '09410141'),
+(3, '09410142'),
+(3, '04311201'),
+(3, '04720201'),
+(3, '04620101'),
+(3, '04622203'),
+(3, '04622101'),
+(3, '09111142'),
+(3, '09210121'),
+(3, '09210122'),
+(3, '09410143'),
+(3, '09410144'),
+(3, '04623201'),
+(3, '04622201'),
+(3, '04622317'),
+(3, '09111243'),
+(3, '04411102'),
+(3, '04621202'),
+(3, '04621203'),
+(3, '04622301'),
+(3, '04622311'),
+(3, '01320003'),
+(3, '04000301'),
+(3, '04621301'),
+(3, '04622303'),
+(3, '04623301'),
+(3, '04622302'),
+(3, '04000303'),
+(3, '01320006'),
+(3, '04620301'),
+(3, '04621302'),
+(3, '04622202'),
+(3, '04623302'),
+(3, '04621308'),
+(3, '04623308'),
+(3, '04622315'),
+(3, '09121045'),
+(3, '04620402'),
+(3, '04622402');
 
 -- --------------------------------------------------------
 
@@ -190,13 +215,13 @@ CREATE TABLE `display_timetable` (
 --
 
 INSERT INTO `display_timetable` (`tb_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
-(1, 1, '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(2, 2, 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory', 'Computer Engineering Laboratory'),
-(3, 3, '', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', '', '', '', '', '', '', '', '', ''),
-(4, 4, 'Busy', 'Busy', '', '', '', '', '', '', '', '', '', '', ''),
-(5, 5, '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(6, 6, '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(7, 7, '', '', '', '', '', '', '', '', '', '', '', '', '');
+(1, 1, '', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', '', '', '', '', '', ''),
+(2, 2, '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, 3, '', 'Calculus for Enginerring 1 | 64146CPE', 'Calculus for Enginerring 1 | 64146CPE', 'Calculus for Enginerring 1 | 64146CPE', '', '', '', '', '', '', '', '', ''),
+(4, 4, '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(5, 5, 'Busy', 'Busy', 'Busy', '', '', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', '', '', '', '', ''),
+(6, 6, '', '', '', '', '', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy'),
+(7, 7, 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -216,10 +241,14 @@ CREATE TABLE `rm21` (
 --
 
 INSERT INTO `rm21` (`subject_id`, `student_groups_id`, `term_id`, `year_id`) VALUES
-('9410142', 36, 1, 7),
-('4622301', 36, 1, 7),
-('4620101', 36, 1, 7),
-('4622203', 36, 1, 7);
+('04620101', 36, 1, 7),
+('04622203', 36, 1, 7),
+('04622101', 36, 1, 7),
+('04620101', 37, 1, 7),
+('04622203', 37, 1, 7),
+('04622101', 37, 1, 7),
+('09111141', 36, 1, 7),
+('09111141', 37, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -237,8 +266,8 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`room_id`, `room_amount`) VALUES
-('101', 30),
-('102', 30);
+('16103', 50),
+('16104', 30);
 
 -- --------------------------------------------------------
 
@@ -271,20 +300,20 @@ CREATE TABLE `room_7x13` (
 --
 
 INSERT INTO `room_7x13` (`room_id`, `year_id`, `term_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
-('101', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('101', 7, 1, 2, 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', '', '', '', '', '', '', ''),
-('101', 7, 1, 3, '', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', '', '', '', '', '', '', '', '', ''),
-('101', 7, 1, 4, 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', '', '', '', '', '', '', '', '', '', '', ''),
-('101', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('101', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('101', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('102', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('102', 7, 1, 2, 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 102 | 64346CPE', '', '', '', '', '', '', ''),
-('102', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('102', 7, 1, 4, '', '', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', '', '', '', '', '', '', '', ''),
-('102', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('102', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('102', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+('16103', 7, 1, 1, '', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', '', '', '', '', '', ''),
+('16103', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 7, 1, 5, '', '', '', '', '', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', '', '', '', '', ''),
+('16103', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16103', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 7, 1, 5, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 'undefined'),
+('16104', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('16104', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -298,6 +327,14 @@ CREATE TABLE `student` (
   `student_name` varchar(30) NOT NULL,
   `student_groups_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`student_id`, `student_password`, `student_name`, `student_groups_id`) VALUES
+('115830462003-7', '1234', 'ภูมิ ทองทรัพย์', 38),
+('115830462011-0', '123456789', 'ภาษิต  ศรีตนชัย', 36);
 
 -- --------------------------------------------------------
 
@@ -315,7 +352,10 @@ CREATE TABLE `student_groups` (
 --
 
 INSERT INTO `student_groups` (`student_groups_id`, `student_groups_name`) VALUES
-(36, '64346CPE');
+(36, '64346CPE'),
+(37, '64146CPE'),
+(38, '58346CPE'),
+(39, '58146CPE');
 
 -- --------------------------------------------------------
 
@@ -348,10 +388,17 @@ CREATE TABLE `student_groups_7x13` (
 --
 
 INSERT INTO `student_groups_7x13` (`student_groups_id`, `year_id`, `term_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
+(37, 7, 1, 1, '', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', '', '', '', '', '', ''),
+(37, 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 7, 1, 3, '', 'Calculus for Enginerring 1 | 64146CPE', 'Calculus for Enginerring 1 | 64146CPE', 'Calculus for Enginerring 1 | 64146CPE', '', '', '', '', '', '', '', '', ''),
+(37, 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 7, 1, 5, '', '', '', '', '', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', '', '', '', '', ''),
+(37, 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (36, 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(36, 7, 1, 2, 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', '', '', '', '', '', '', ''),
-(36, 7, 1, 3, '', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', '', '', '', '', '', '', '', '', ''),
-(36, 7, 1, 4, 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', '', '', '', '', '', '', '', ''),
+(36, 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (36, 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (36, 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (36, 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -374,46 +421,48 @@ CREATE TABLE `subject` (
 --
 
 INSERT INTO `subject` (`subject_id`, `subject_name`, `subject_unit`, `required_subject`) VALUES
-('1320003', 'English Conversation', '3(2-2-5)', ''),
-('1320006', 'English for Science and Technology', '3(2-2-5)', ''),
-('4000301', 'Preparation for Professional Experience', '1(0-2-1)', ''),
-('4000303', 'Job Training', '3(0-40-0)', ''),
-('4311201', 'Engineering Mechanics', '3(3-0-6)', ''),
-('4411102', 'Engineering Drawing', '3(2-3-5)', ''),
-('4620101', 'Computer Engineering Laboratory', '2(0-6-0)', ''),
-('4620301', 'Computer Engineering Pre-Project', '1(0-3-1)', ''),
-('4620402', 'Computer Engineering Project', '3(1-6-4)', ''),
-('4621202', 'Adcance Digital System Design', '3(2-3-5)', 'Digital Circuit and Logic Desgin'),
-('4621203', 'Computer Architecture', '3(2-3-5)', ''),
-('4621301', 'Computer Organization and Assembly Language', '3(2-3-5)', ''),
-('4621302', 'Microcontroller and Interfacing', '3(2-3-5)', ''),
-('4621308', 'Computer Hardware Laboratory', '1(0-3-0)', ''),
-('4622101', 'Advanced Computer Programming', '3(2-3-5)', 'Computer Programming'),
-('4622201', 'Data Structure and Algorithm', '3(2-3-5)', 'Computer Programming'),
-('4622202', 'Software Engineering', '3(3-0-6)', ''),
-('4622203', 'Theory of Computation', '3(3-0-6)', ''),
-('4622301', 'Database Systems', '3(2-3-5)', 'Data Structure and Algorithm'),
-('4622302', 'Operating Systems', '3(3-0-6)', 'General Statistics'),
-('4622303', 'System Analysis and Design', '3(2-3-5)', 'Data Structure and Algorithm'),
-('4622311', 'Object Oriented Sofware Engineering', '3(2-2-5)', ''),
-('4622315', 'Mobile Device Programming', '3(2-3-5)', ''),
-('4622317', 'Computer Software Laboratory', '1(0-3-1)', 'Computer Programming'),
-('4622402', 'Advanced Topics in Computer Software', '3(2-3-5)', ''),
-('4623201', 'Data Communication', '3(3-0-6)', ''),
-('4623301', 'Computer Networks', '3(3-0-6)', 'Data Communication'),
-('4623302', 'TCP/IP Network', '3(3-0-6)', 'Computer Networks'),
-('4623308', 'Computer Network Laboratory', '1(0-3-0)', ''),
-('4720201', 'Engineering Materials', '3(3-0-6)', ''),
-('9111141', 'Calculus for Enginerring 1', '3(3-0-6)', ''),
-('9111142', 'Calculus for Enginerring 2', '3(3-0-6)', 'Calculus for Engineers 1'),
-('9111243', 'Calculus for Enginerring 3', '3(3-0-6)', 'Calculus for Enginerring 2'),
-('9121045', 'General Statistics', '3(3-0-6)', ''),
-('9210121', 'Chemistry for Engineering', '3(3-0-6)', ''),
-('9210122', 'Chemistry Laboratory for Engineering', '1(0-3-1)', ''),
-('9410141', 'Physics for Engineering 1', '3(3-0-6)', ''),
-('9410142', 'Physic Laboratory for Engineering 1', '1(0-3-1)', ''),
-('9410143', 'Physics for Engineering 2', '3(3-0-6)', 'Physics for Engineers 1'),
-('9410144', 'Physic Laboratory for Engineering 1', '1(0-3-1)', 'Physics Laboratory for Engineers 1');
+('01320003', 'English Conversation', '3(2-2-5)', ''),
+('01320006', 'English for Science and Technology', '3(2-2-5)', ''),
+('04000301', 'Preparation for Professional Experience', '1(0-2-1)', ''),
+('04000303', 'Job Training', '3(0-40-0)', ''),
+('04311201', 'Engineering Mechanics', '3(3-0-6)', ''),
+('04411102', 'Engineering Drawing', '3(2-3-5)', ''),
+('04620101', 'Computer Engineering Laboratory', '2(0-6-0)', ''),
+('04620301', 'Computer Engineering Pre-Project', '1(0-3-1)', ''),
+('04620402', 'Computer Engineering Project', '3(1-6-4)', ''),
+('04621202', 'Adcance Digital System Design', '3(2-3-5)', 'Digital Circuit and Logic Desgin'),
+('04621203', 'Computer Architecture', '3(2-3-5)', ''),
+('04621301', 'Computer Organization and Assembly Language', '3(2-3-5)', ''),
+('04621302', 'Microcontroller and Interfacing', '3(2-3-5)', ''),
+('04621308', 'Computer Hardware Laboratory', '1(0-3-0)', ''),
+('04622101', 'Advanced Computer Programming', '3(2-3-5)', 'Computer Programming'),
+('04622201', 'Data Structure and Algorithm', '3(2-3-5)', 'Computer Programming'),
+('04622202', 'Software Engineering', '3(3-0-6)', ''),
+('04622203', 'Theory of Computation', '3(3-0-6)', ''),
+('04622301', 'Database Systems', '3(2-3-5)', 'Data Structure and Algorithm'),
+('04622302', 'Operating Systems', '3(3-0-6)', 'General Statistics'),
+('04622303', 'System Analysis and Design', '3(2-3-5)', 'Data Structure and Algorithm'),
+('04622311', 'Object Oriented Sofware Engineering', '3(2-2-5)', ''),
+('04622315', 'Mobile Device Programming', '3(2-3-5)', ''),
+('04622317', 'Computer Software Laboratory', '1(0-3-1)', 'Computer Programming'),
+('04622402', 'Advanced Topics in Computer Software', '3(2-3-5)', ''),
+('04623201', 'Data Communication', '3(3-0-6)', ''),
+('04623301', 'Computer Networks', '3(3-0-6)', 'Data Communication'),
+('04623302', 'TCP/IP Network', '3(3-0-6)', 'Computer Networks'),
+('04623308', 'Computer Network Laboratory', '1(0-3-0)', ''),
+('04720201', 'Engineering Materials', '3(3-0-6)', ''),
+('09111141', 'Calculus for Enginerring 1', '3(3-0-6)', ''),
+('09111142', 'Calculus for Enginerring 2', '3(3-0-6)', 'Calculus for Engineers 1'),
+('09111243', 'Calculus for Enginerring 3', '3(3-0-6)', 'Calculus for Enginerring 2'),
+('09121045', 'General Statistics', '3(3-0-6)', ''),
+('09210121', 'Chemistry for Engineering', '3(3-0-6)', ''),
+('09210122', 'Chemistry Laboratory for Engineering', '1(0-3-1)', ''),
+('09410141', 'Physics for Engineering 1', '3(3-0-6)', ''),
+('09410142', 'Physic Laboratory for Engineering 1', '1(0-3-1)', ''),
+('09410143', 'Physics for Engineering 2', '3(3-0-6)', 'Physics for Engineers 1'),
+('09410144', 'Physic Laboratory for Engineering 1', '1(0-3-1)', 'Physics Laboratory for Engineers 1'),
+('13213', '', '', ''),
+('ฟห', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -436,10 +485,9 @@ CREATE TABLE `subject_teacher` (
 --
 
 INSERT INTO `subject_teacher` (`subject_teacher_id`, `subject_id`, `teacher_t`, `teacher_l1`, `teacher_l2`, `teacher_l3`, `teacher_l4`) VALUES
-(45, '4622301', 'patrapee.s', 'patrapee.s', '', '', ''),
-(46, '4622311', 'itarun.p', 'itarun.p', '', '', ''),
-(47, '4620101', 'sutinun.p', 'sutinun.p', '', '', ''),
-(48, '4622203', 'manoch.p', 'manoch.p', '', '', '');
+(77, '04622101', 'patrapee.s', 'patrapee.s', '', '', ''),
+(78, '04620101', 'sutinun.p', 'sutinun.p', '', '', ''),
+(79, '04622203', 'manoch.p', 'manoch.p', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -462,24 +510,10 @@ CREATE TABLE `teacher` (
 
 INSERT INTO `teacher` (`teacher_id`, `teacher_password`, `teacher_name`, `teacher_website`, `teacher_email`, `teacher_phone`) VALUES
 ('', '', '', '', '', ''),
-('deachrut.j', '1234', 'Deachrut Jaithavil', 'http://teacher.en.rmutt.ac.th/deachrut.j', 'deachrut.j@en.rmutt.ac.th', '025-493467'),
-('itarun.p', '1234', 'Itarun Pitimon', '-', 'itarun.p@en.rmutt.ac.th', '025-493466'),
-('jedsada.a', '1234', 'Jedsada Arunruerk', '-', 'jedsada.a@en.rmutt.ac.th', '025-493467'),
-('kittiwann.n', '1234', 'Kittiwann Nimkerdphol', 'http://web.en.rmutt.ac.th/ktw/', 'kittiwann.n@en.rmutt.ac.th', '025-493464'),
-('manoch.p', '1234', 'Manoch Pracha', 'http://web.en.rmutt.ac.th/manoch/', 'manoch.p@en.rmutt.ac.th', '025-493464'),
-('nachirat.r', '1234', 'Nachirat Rachburee', 'http://teacher.en.rmutt.ac.th/nachirat.r', 'nachirat.r@en.rmutt.ac.th', '025-493467'),
-('nuchtiphong.o', '1234', 'Nuchtiphong Outhong', 'http://teacher.en.rmutt.ac.th/nuchtiphong.o', 'nuchtiphong.o@en.rmutt.ac.th', '025-493464'),
-('patrapee.s', '1234', 'Patrapee Sunantapot', '-', 'patrapee.s@en.mutt.ac.th', '025-493461'),
-('pauline.k', '1234', 'Pauline Kongsuwan ', 'https://sites.google.com/a/en.rmutt.ac.th/pkongsuw', 'pauline.k@en.rmutt.ac.th', '025-493464'),
-('pitchayapatchaya.s', '1234', 'Pitchayapatchaya Srikram', '-', 'pitchayapatchaya.s@en.rmutt.ac', '025-493469'),
-('prusayon.n', '1234', 'Prusayon Nintanavongsa ', 'http://teacher.en.rmutt.ac.th/prusayon', 'prusayon.n@en.rmutt.ac.th', '025-493467'),
-('samatachai.j', '1234', 'Samatachai Jantarat', 'http://teacher.en.rmutt.ac.th/samatachai.j', 'samatachai.j@en.rmutt.ac.th', '025-493467'),
-('sirichai.t', '1234', 'Sirichai Triamlumlerd', '-', 'sirichai.t@en.rmutt.ac.th', '025-493464'),
-('sitti.r', '1234', 'Sitti Rugtanom', 'http://www.facebook.com/#!/sitti.rugtanom', 'sitti.r@en.rmutt.ac.th', '025-493467'),
-('sutinun.p', '1234', 'Sutinun Pronanuluck', '-', 'sutinun.p@en.rmutt.ac.th', '025-493464'),
-('wattana.p', '1234', 'Wattana Punlumjeak', '-', 'wattana.p@en.rmutt.ac.th', '025-493464'),
-('weerachai.y', '1234', 'Weerachai Yaemvachi', 'http://www.en.rmutt.ac.th/weerachai.y', 'weerachai.y@en.rmutt.ac.th', '025-493466'),
-('winai.w', '1234', 'Winai Wichaipanitch', '-', 'winai.w@en.rmutt.ac.th', '025-493465');
+('-', '-', '-', '-', '-', '-'),
+('manoch.p', '1234', 'อ.มาโนช  ประชา', 'http://web.en.rmutt.ac.th/manoch/', 'manoch.p@en.rmutt.ac.th', '0-2549-3464'),
+('patrapee.s', '1234', 'อ.พัฒณ์รพี  สุนันทพจน์', '-', 'patrapee.s@en.rmutt.ac.th', '0-2549-3461'),
+('sutinun.p', '1234', 'ดร.สุทินัน  พรอนุรักษ์', '-', 'sutinun.p@en.rmutt.ac.th', '0-2549-3464');
 
 -- --------------------------------------------------------
 
@@ -512,32 +546,32 @@ CREATE TABLE `teacher_7x13` (
 --
 
 INSERT INTO `teacher_7x13` (`teacher_id`, `year_id`, `term_id`, `day_id`, `time1`, `time2`, `time3`, `time4`, `time5`, `time6`, `time7`, `time8`, `time9`, `time10`, `time11`, `time12`, `time13`) VALUES
+('-', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('-', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('-', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('-', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('-', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('-', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('-', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 1, '', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', 'Computer Engineering Laboratory | sutinun.p | 16103 | 16103 | 64146CPE', '', '', '', '', '', ''),
+('sutinun.p', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('sutinun.p', 7, 1, 5, 'Busy', 'Busy', 'Busy', '', '', '', '', '', '', '', '', '', ''),
+('sutinun.p', 7, 1, 6, '', '', '', '', '', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy'),
+('sutinun.p', 7, 1, 7, 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', 'Busy', '', '', '', '', '', ''),
 ('patrapee.s', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('patrapee.s', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('patrapee.s', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('patrapee.s', 7, 1, 4, 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', 'Database Systems | patrapee.s | 101 | 102 | 64346CPE', '', '', '', '', '', '', '', ''),
+('patrapee.s', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('patrapee.s', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('patrapee.s', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('patrapee.s', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('itarun.p', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 7, 1, 2, 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', 'Computer Engineering Laboratory | sutinun.p | 102 | 64346CPE', '', '', '', '', '', '', ''),
-('sutinun.p', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('sutinun.p', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('manoch.p', 7, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('manoch.p', 7, 1, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('manoch.p', 7, 1, 3, '', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', 'Theory of Computation | manoch.p | 101 | 64346CPE', '', '', '', '', '', '', '', '', ''),
+('manoch.p', 7, 1, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('manoch.p', 7, 1, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-('manoch.p', 7, 1, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('manoch.p', 7, 1, 5, '', '', '', '', '', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', 'Theory of Computation | manoch.p | 16103 | 16104 | 64146CPE', '', '', '', '', ''),
 ('manoch.p', 7, 1, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 ('manoch.p', 7, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
@@ -586,16 +620,25 @@ CREATE TABLE `view_timetable` (
 --
 
 INSERT INTO `view_timetable` (`tb_id`, `subject_id`, `student_groups_id`, `room_t`, `room_l`, `time_t`, `time_l`, `teacher_t`, `teacher_l`, `term_id`, `year_id`) VALUES
-(70, '9111141', 36, '', '', 'MON 1-3', '', '', '', 1, 7),
-(71, '9410141', 36, '', '', 'WED 1-3', '', '', '', 1, 7),
-(72, '9410142', 36, '', '', '', '', '', '', 1, 7),
-(73, '4311201', 36, '', '', '', '', '', '', 1, 7),
-(74, '4720201', 36, '', '', '', '', '', '', 1, 7),
-(75, '4620101', 36, '', '', '', '', '', '', 1, 7),
-(76, '4622301', 36, '101', '102', 'WED 1-2', 'WED 3-5', 'patrapee.s', 'patrapee.s', 1, 7),
-(77, '4622311', 36, '101', '102', 'FRI 1-2', 'FRI 3-4', 'itarun.p', 'itarun.p', 1, 7),
-(78, '4620101', 36, '', '', '', '', '', '', 1, 7),
-(79, '4622203', 36, '101', '', 'TUE 2-4', '', 'manoch.p', 'manoch.p', 1, 7);
+(85, '04620101', 36, '', '', '', '', '', '', 1, 7),
+(88, '04620101', 37, '16103', '16103', '', 'SUN 2-7', 'sutinun.p', 'sutinun.p', 1, 7),
+(89, '04622203', 37, '16103', '16104', 'THU 6-8', '', 'manoch.p', 'manoch.p', 1, 7),
+(90, '04622101', 37, '', '', '', '', '', '', 1, 7),
+(92, '09111141', 36, '', '', '', '', '', '', 1, 7),
+(93, '09111141', 37, '', '', 'TUE 2-4', '', '', '', 1, 7),
+(94, '04622101', 36, '', '', '', '', '', '', 1, 7),
+(95, '04622203', 36, '', '', '', '', '', '', 1, 7),
+(96, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(97, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(98, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(99, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(100, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(101, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(102, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(103, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(104, '09410141', 37, '', '', '', '', '', '', 0, 0),
+(105, '09210121', 37, '', '', '', '', '', '', 1, 7),
+(106, '09210122', 37, '', '', '', '', '', '', 1, 7);
 
 -- --------------------------------------------------------
 
@@ -627,7 +670,9 @@ INSERT INTO `year` (`year_id`, `year_name`) VALUES
 (12, 2569),
 (13, 2570),
 (14, 2571),
-(15, 2572);
+(15, 2572),
+(16, 2573),
+(17, 2574);
 
 --
 -- Indexes for dumped tables
@@ -638,6 +683,15 @@ INSERT INTO `year` (`year_id`, `year_name`) VALUES
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `check_dd_timetable`
+--
+ALTER TABLE `check_dd_timetable`
+  ADD KEY `subject_id` (`subject_id`),
+  ADD KEY `student_groups_id` (`student_groups_id`),
+  ADD KEY `term_id` (`term_id`),
+  ADD KEY `year_id` (`year_id`);
 
 --
 -- Indexes for table `course`
@@ -797,13 +851,13 @@ ALTER TABLE `day`
 -- AUTO_INCREMENT for table `student_groups`
 --
 ALTER TABLE `student_groups`
-  MODIFY `student_groups_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `student_groups_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `subject_teacher`
 --
 ALTER TABLE `subject_teacher`
-  MODIFY `subject_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `subject_teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `term`
@@ -815,17 +869,26 @@ ALTER TABLE `term`
 -- AUTO_INCREMENT for table `view_timetable`
 --
 ALTER TABLE `view_timetable`
-  MODIFY `tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `year`
 --
 ALTER TABLE `year`
-  MODIFY `year_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `year_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `check_dd_timetable`
+--
+ALTER TABLE `check_dd_timetable`
+  ADD CONSTRAINT `check_dd_timetable_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `check_dd_timetable_ibfk_2` FOREIGN KEY (`student_groups_id`) REFERENCES `student_groups` (`student_groups_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `check_dd_timetable_ibfk_3` FOREIGN KEY (`term_id`) REFERENCES `term` (`term_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `check_dd_timetable_ibfk_4` FOREIGN KEY (`year_id`) REFERENCES `year` (`year_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `course_student_groups`
